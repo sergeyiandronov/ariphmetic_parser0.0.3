@@ -6,10 +6,10 @@ using namespace std;
 int main()
 
 {   int n=0;
-    int* P=(int*)malloc(sizeof(int));
+    double* P=(double*)malloc(sizeof(double));
     char* command=(char*)malloc(sizeof(char));
     string str;
-    int b;
+    double b;
     char com;
     getline(cin, str);
     istringstream stream(str);
@@ -23,7 +23,7 @@ int main()
                 }
                 
                 n++;
-                P=(int*)realloc(P,(n+1)*sizeof(int));
+                P=(double*)realloc(P,(n+1)*sizeof(double));
                 *(P+n)=b;
                 break;
             case '-':
@@ -32,7 +32,7 @@ int main()
                 	*(command+n)=com;
                 }
                  n++;
-                P=(int*)realloc(P,(n+1)*sizeof(int));
+                P=(double*)realloc(P,(n+1)*sizeof(double));
                 *(P+n)=b;
                 break;
             case '*':
@@ -47,7 +47,7 @@ int main()
                 break;
             }
         }
-        int rs=*P;
+        double rs=*P;
         for(int i=0;i<n+1;i++){
         	switch(*(command+i)){
         		case '+':
